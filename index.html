@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pemutar musik bergaya retro Windows 95 klasik.">
+    <title>yo gng</title>
+    
+    <!-- Memanggil font retro dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    
+    <!-- Memanggil file CSS eksternal (untuk desain CD Player-nya) -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- KODE BACKGROUND DITAMBAHKAN DI SINI -->
+    <style>
+        body {
+            /* Memanggil file background.png */
+            /* Jika file background.png ada di folder asset, ubah menjadi url('asset/background.png'); */
+            background-image: url('asset/background.png');
+            
+            /* Standar background penuh dan responsif */
+            background-size: cover;
+            background-position: center;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            overflow: hidden;
+            
+            /* Menghapus margin bawaan browser */
+            margin: 0;
+            min-height: 100vh;
+            
+            /* Membuat window CD Player berada tepat di tengah layar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="window">
+        <div class="title-bar">
+            <span>💿 CD Player</span>
+            <div class="title-bar-controls">
+                <button type="button">_</button>
+                <button type="button">□</button>
+                <button type="button">X</button>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- Menampilkan gambar cover dari folder asset -->
+            <div class="album-cover">
+                <img loading="lazy" src="asset/cover.png" alt="Album Cover" class="cover-image">
+            </div>
+            
+            <div class="player-controls">
+                <div class="info-row">
+                    <span>Artist:</span>
+                    <div class="info-box">
+                        <span>Deftones</span>
+                        <div class="dropdown-btn">
+                            <div class="tri-down"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <span>Track:</span>
+                    <div class="info-box">
+                        <span>Entombed</span>
+                        <div class="dropdown-btn">
+                            <div class="tri-down"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-container">
+                    <input type="range" id="seek-bar" value="0" step="0.1">
+                </div>
+                
+                <div class="buttons">
+                    <button type="button" class="btn" id="prev">
+                        <div class="icon-prev"><div class="bar"></div><div class="tri-left"></div><div class="tri-left"></div></div>
+                    </button>
+                    <button type="button" class="btn" id="play">
+                        <div class="icon-play"><div class="tri-right-play"></div></div>
+                    </button>
+                    <button type="button" class="btn" id="pause">
+                        <div class="icon-pause"><div class="bar"></div><div class="bar"></div></div>
+                    </button>
+                    <button type="button" class="btn" id="stop">
+                        <div class="stop-box"></div>
+                    </button>
+                    <button type="button" class="btn" id="next">
+                        <div class="icon-next"><div class="tri-right"></div><div class="tri-right"></div><div class="bar"></div></div>
+                    </button>
+                    <button type="button" class="btn" id="eject">
+                        <div class="icon-eject"><div class="tri-up"></div><div class="eject-bar"></div></div>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Memperbarui lokasi file audio ke folder asset -->
+    <audio id="audio-player" src="asset/Entombed.mp3"></audio>
+
+    <!-- Memanggil file JavaScript eksternal -->
+    <script src="script.js" defer></script>
+</body>
+</html>

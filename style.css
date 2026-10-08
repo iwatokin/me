@@ -1,0 +1,222 @@
+body {
+    /* --- PENGATURAN BACKGROUND --- */
+    background-color: #1a1a1a;                     /* Warna gelap cadangan jika gambar gagal dimuat */
+    background-image: url('asset/background.png'); /* Pastikan ekstensi dan folder sudah benar */
+    background-repeat: repeat;                     
+    background-size: auto;                         
+    background-attachment: scroll;                 
+    
+    /* --- PENGATURAN TATA LETAK & FONT --- */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ubah 'height' menjadi 'min-height' agar tata letak tidak rusak saat discroll */
+    margin: 0;
+    font-family: 'Pixelify Sans', 'MS Sans Serif', Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+
+.window {
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #000000;
+    border-bottom-color: #000000;
+    width: 95%; 
+    max-width: 400px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 0 #000 inset, -1px -1px 0 #fff inset;
+    filter: blur(0.5px); 
+}
+
+.title-bar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: white;
+    padding: 3px 2px 3px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.title-bar-controls button {
+    background-color: #c0c0c0;
+    border: 1px solid;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #000000;
+    border-bottom-color: #000000;
+    width: 16px;
+    height: 14px;
+    font-size: 9px;
+    line-height: 10px;
+    padding: 0;
+    margin-left: 2px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.content {
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+/* KOTAK ALBUM COVER DIPERBAIKI */
+.album-cover {
+    width: 100px;
+    height: 100px;
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000;
+    overflow: hidden; /* Mencegah gambar meluber */
+    box-sizing: border-box;
+}
+
+/* PENGATURAN GAMBAR COVER */
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.player-controls {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* LABEL DIUBAH MENJADI SPAN */
+.info-row span:first-child {
+    width: 50px;
+}
+
+.info-box {
+    background-color: #ffffff;
+    border: 2px solid;
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+    padding: 2px 5px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-btn {
+    background-color: #c0c0c0;
+    border: 1px solid;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #000000;
+    border-bottom-color: #000000;
+    height: 14px;
+    width: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider-container {
+    margin: 10px 0;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 10px;
+    background: #c0c0c0;
+    border: 1px solid;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #000000;
+    border-bottom-color: #000000;
+    cursor: pointer;
+    margin-top: -6px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #000;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.buttons {
+    display: flex;
+    gap: 3px;
+}
+
+/* UKURAN TOMBOL DIPERBAIKI */
+.btn {
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #000000;
+    border-bottom-color: #000000;
+    width: 36px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* EFEK KLIK (ICON IKUT TURUN) */
+.btn:active {
+    border-top-color: #000000;
+    border-left-color: #000000;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+    box-shadow: inset 1px 1px 0px #808080;
+}
+.btn:active > div {
+    transform: translate(1px, 1px);
+}
+
+/* === PENGGAMBARAN IKON RETRO DENGAN CSS === */
+.bar { width: 2px; height: 10px; background: black; }
+.tri-left { width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-right: 6px solid black; }
+.tri-right { width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 6px solid black; }
+.tri-right-play { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid black; }
+.tri-up { width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 5px solid black; }
+.tri-down { width: 0; height: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 4px solid black; }
+.stop-box { width: 8px; height: 8px; background: black; }
+.eject-bar { width: 10px; height: 2px; background: black; }
+
+.icon-prev, .icon-next, .icon-play, .icon-pause { display: flex; align-items: center; justify-content: center; gap: 1px; }
+.icon-pause { gap: 2px; }
+.icon-eject { display: flex; flex-direction: column; align-items: center; gap: 2px; margin-top: 1px; }
